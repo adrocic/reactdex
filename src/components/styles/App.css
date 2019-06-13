@@ -1,0 +1,10 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1024px;
+  height: 1024px;
+  margin: 10px auto;
+  background-color: rgba(85, 166, 156, 1);
+  box-shadow: 0px 0px 3px 1px rgba(122,122,122,1);
+}

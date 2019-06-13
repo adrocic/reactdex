@@ -1,0 +1,51 @@
+.poke-cell {
+    height: 252px;
+    width: 220px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    border-radius: 2px;
+    outline: none;
+
+  }
+
+  .poke-cell:hover {
+    box-shadow: 0px 0px 10px 3px rgba(122,122,122,1);
+    transform: translate(0px, -1px);
+    cursor: pointer;
+  }
+
+  .poke-cell:active {
+    box-shadow: 0 0px;
+    transform: translate(0px, 3px);
+  }
+
+  h1 {
+    color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10px;
+  }
+
+  hr {
+    border-top: 1px solid rgba(233, 233, 233, 1);
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-right: 10px;
+  }
+
+  li {
+    color: rgb(149, 224, 64);
+    margin-right: 10px;
+    background-color: rgb(242, 255, 227);
+    border-radius: 3px;
+    border: 1px solid rgb(149, 224, 64);
+    padding: 5px;
+  }
+
+
