@@ -2,16 +2,24 @@ import React from 'react';
 import './styles/PokeCell.css';
 
 
-const PokeCell = () => {
-  return <button className="poke-cell">
-     <h1>Bulbasaur</h1>
-     <hr></hr>
-     <img src="https://img.pokemondb.net/sprites/x-y/normal/bulbasaur.png" alt="Bulbasaur"></img>
-     <ul>
-         <li>Grass</li>
-         <li>Poison</li>
-     </ul>
-  </button>
+const PokeCell = (props) => {
+  
+  const name = props.name;
+  const image = props.image;
+  
+  return (
+    <div className="poke-cell">
+      <h1 className="poke-cell-name">{name}</h1>
+      <span className="divider"></span>
+      <div className="poke-cell-image">
+        <img src={image} alt={name}></img>
+      </div>
+      <ul>
+        <li className="poke-cell-types">Grass</li>
+        <li className="poke-cell-types">Poison</li>
+      </ul>
+    </div>
+  )
 };
 
 

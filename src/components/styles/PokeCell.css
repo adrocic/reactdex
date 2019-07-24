@@ -1,12 +1,13 @@
+
 .poke-cell {
-    height: 252px;
-    width: 220px;
-    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 220px;
     background-color: rgba(255, 255, 255, 1);
     border: none;
-    border-radius: 2px;
+    border-radius: 3px;
     outline: none;
-
+    padding: 0px;
   }
 
   .poke-cell:hover {
@@ -20,32 +21,51 @@
     transform: translate(0px, 3px);
   }
 
-  h1 {
-    color: rgba(0, 0, 0, 0.85);
+  .poke-cell .poke-cell-name {
     display: flex;
-    justify-content: flex-start;
-    margin-left: 10px;
+    height: 20%;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 16px;
+    margin-left: 20px;
+    align-items: center;
   }
 
-  hr {
-    border-top: 1px solid rgba(233, 233, 233, 1);
+  .divider {
+    height: 1px;
+    background: #cccccc;
+    margin: 0px;
+    padding: 0px;
+ }
+
+  .poke-cell .poke-cell-image {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
   }
 
   ul {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    margin-right: 10px;
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
   }
 
-  li {
-    color: rgb(149, 224, 64);
+  .poke-cell-types {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(247, 255, 238);
+    color: rgba(82, 196, 26, 1);
     margin-right: 10px;
-    background-color: rgb(242, 255, 227);
-    border-radius: 3px;
-    border: 1px solid rgb(149, 224, 64);
-    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid rgb(164, 230, 90);
+    padding: 5px 10px 5px 10px;
   }
 
 

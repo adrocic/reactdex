@@ -2,21 +2,18 @@ import React from 'react';
 import PokeCell from './PokeCell';
 import './styles/PokeList.css';
 
-const PokeList = () => {
+const PokeList = (props) => {
+    
     return (
         <section className="poke-list">
-            <PokeCell />
-            <PokeCell />
-            <PokeCell />
-            <PokeCell />
-            <PokeCell />
-            <PokeCell />
-            <PokeCell />
-            <PokeCell />
-            <PokeCell />
-            <PokeCell />
-            <PokeCell />
-            <PokeCell />
+            {props.pokemon.map((pokemon, index) => (
+                <PokeCell 
+                    key={pokemon.id + index}
+                    id={pokemon.id}
+                    name={pokemon.name}
+                    image={pokemon.image}
+                />
+            ))}
         </section>
     )
 }
