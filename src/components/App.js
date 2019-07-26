@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Pagination from './Pagination'
 import PokeList from './PokeList';
+import SearchPokemon from './SearchPokemon'
 import axios from 'axios';
 import './styles/App.css';
 
@@ -34,7 +35,7 @@ const App = () => {
   return (
     <div className="App">
       {/* backward button */}
-      {/* search bar */}
+      <SearchPokemon />
       {/* forward button */}
       <PokeList pokemon = {currentCards} loading={loading} />
       <Pagination cardsPerPage={cardsPerPage} totalCards={totalCards} paginate={paginate}/>
