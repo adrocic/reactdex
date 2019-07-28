@@ -1,0 +1,101 @@
+.poke-cell-types-grass {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(247, 255, 238);
+    color: rgba(82, 196, 26, 1);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(164, 230, 90);
+    padding: 5px 10px 5px 10px;
+  }
+
+  .poke-cell-types-poison {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(248, 238, 255);
+    color: rgb(134, 26, 196);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(174, 90, 230);
+    padding: 5px 10px 5px 10px;
+  }
+
+  .poke-cell-types-fire {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(255, 242, 238);
+    color: rgb(196, 74, 26);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(230, 111, 90);
+    padding: 5px 10px 5px 10px;
+  }
+
+  .poke-cell-types-water {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(238, 252, 255);
+    color: rgb(26, 176, 196);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(90, 155, 230);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-bug {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(248, 255, 238);
+    color: rgb(26, 156, 21);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(92, 180, 70);
+    padding: 5px 10px 5px 10px;
+  }
+
+  .poke-cell-types-flying {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(238, 238, 238);
+    color: rgb(95, 95, 95);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(119, 119, 119);
+    padding: 5px 10px 5px 10px;
+  }

@@ -30,15 +30,20 @@ const App = () => {
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
- 
+  const paginate = (pageNumber) => {
+    if (pageNumber < 1) {
+      pageNumber = 1;
+    }
+    setCurrentPage(pageNumber);
+  }
   return (
     <div className="App">
       {/* backward button */}
       <SearchPokemon />
+      <Pagination cardsPerPage={cardsPerPage} totalCards={totalCards} paginate={paginate} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
       {/* forward button */}
       <PokeList pokemon = {currentCards} loading={loading} />
-      <Pagination cardsPerPage={cardsPerPage} totalCards={totalCards} paginate={paginate}/>
+      
     </div>
   );
 };

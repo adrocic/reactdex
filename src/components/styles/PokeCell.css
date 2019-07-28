@@ -51,21 +51,6 @@
     padding: 0;
   }
 
-  .poke-cell-types {
-    display: flex;
-    box-sizing: content-box;
-    justify-content: center;
-    align-self: flex-end;
-    text-transform: uppercase;
-    font-size: 12px;
-    margin-top: 30px;
-    width: 30%;
-    background: rgb(247, 255, 238);
-    color: rgba(82, 196, 26, 1);
-    margin-right: 10px;
-    border-radius: 5px;
-    border: 1px solid rgb(164, 230, 90);
-    padding: 5px 10px 5px 10px;
-  }
 
+  
 

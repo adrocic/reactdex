@@ -12,6 +12,7 @@ const PokeList = (props) => {
                     id={pokemon.id}
                     name={pokemon.name}
                     image={pokemon.image}
+                    types={pokemon.types}
                 />
             ))}
         </section>
