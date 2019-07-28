@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Pagination from './Pagination'
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Pagination from './Pagination';
 import PokeList from './PokeList';
-import SearchPokemon from './SearchPokemon'
+import SearchPokemon from './SearchPokemon';
+import PokemonDetail from './PokemonDetail';
 import axios from 'axios';
 import './styles/App.css';
 
@@ -37,14 +39,24 @@ const App = () => {
     setCurrentPage(pageNumber);
   }
   return (
-    <div className="App">
-      {/* backward button */}
-      <SearchPokemon />
-      <Pagination cardsPerPage={cardsPerPage} totalCards={totalCards} paginate={paginate} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-      {/* forward button */}
-      <PokeList pokemon = {currentCards} loading={loading} />
-      
-    </div>
+    <Router>
+      <div className="App">
+        <SearchPokemon />
+        <Pagination cardsPerPage={cardsPerPage} totalCards={totalCards} paginate={paginate} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <Switch>
+          <Route 
+            path="/" 
+            exact 
+            render={(props) => <PokeList {...props } pokemon = {currentCards} loading={loading} /> }
+          />
+          <Route 
+            path="/:id"
+            component={PokemonDetail}
+          />
+        </Switch>
+      </div>
+    </Router>
+
   );
 };
 

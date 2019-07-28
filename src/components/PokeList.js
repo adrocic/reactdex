@@ -1,19 +1,23 @@
 import React from 'react';
 import PokeCell from './PokeCell';
 import './styles/PokeList.css';
+import { Link } from 'react-router-dom';
 
 const PokeList = (props) => {
     
     return (
         <section className="poke-list">
             {props.pokemon.map((pokemon, index) => (
-                <PokeCell 
-                    key={pokemon.id + index}
-                    id={pokemon.id}
-                    name={pokemon.name}
-                    image={pokemon.image}
-                    types={pokemon.types}
-                />
+                <Link key={pokemon.id + index} to={`/${pokemon.id}`}>
+                    <PokeCell 
+                        key={pokemon.id + index}
+                        id={pokemon.id}
+                        name={pokemon.name}
+                        image={pokemon.image}
+                        types={pokemon.types}
+                    />
+                </Link>
+                
             ))}
         </section>
     )
