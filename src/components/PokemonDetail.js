@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles/PokemonDetail.css'
 import './styles/Types.css'
+import { FaFileExcel } from 'react-icons/fa';
 // const ColorThief = require('color-thief');
 
 
@@ -33,6 +34,25 @@ const PokemonDetail = ({ match }) => {
     //     color: `rgb(${stopYouThief})`
     // }
 
+    const hp = pokemon.stats.hp;
+    const speed = pokemon.stats.speed;
+    const attack = pokemon.stats.attack;
+    const defense = pokemon.stats.defense;
+    const specialAttack = pokemon.stats["special-attack"];
+    const specialDefense = pokemon.stats["special-defense"];
+
+    const hpBar = hp / 250 * 100
+    const speedBar = speed / 250 * 100
+    const attackBar = attack / 250 * 100
+    const defenseBar = defense / 250 * 100
+    const specialAttackBar = specialAttack / 250 * 100
+    const specialDefenseBar = specialDefense / 250 * 100
+
+    const statContainer = {
+        backgroundColor: 'rgb(219, 219, 219)',
+        width: '100%',
+    }
+
     return (
         <div className="pokemon-detail">
             <div className="name-header">{pokemon.name}</div>
@@ -47,14 +67,24 @@ const PokemonDetail = ({ match }) => {
             </div>
             <hr/>
             <div className="pokemon-image-stats">
-                <img src={pokemon.image} alt=""></img>
+                <div className="pokemon-image">
+                    <img src={pokemon.image} alt=""></img>
+                </div>
                 <div className="pokemon-stats">
-                    <h4>HP: {pokemon.stats.hp}</h4>
-                    <h4>Speed: {pokemon.stats.speed}</h4>
-                    <h4>Attack: {pokemon.stats.attack}</h4>
-                    <h4>Defense: {pokemon.stats.defense}</h4>
-                    <h4>Special-Attack: {pokemon.stats["special-attack"]}</h4>
-                    <h4>Special-Defense: {pokemon.stats["special-defense"]}</h4>
+                    <h4>HP: </h4>
+                    <h4>Speed: </h4>
+                    <h4>Attack: </h4>
+                    <h4>Defense: </h4>
+                    <h4>Special-Attack: </h4>
+                    <h4>Special-Defense: </h4>
+                </div>
+                <div className="pokemon-stat-bars">
+                    <div style={statContainer}><div style={{ width: hpBar + '%', backgroundColor: 'rgb(85, 166, 156)', marginBottom: '5px' }}>{hp}</div></div>
+                    <div style={statContainer}><div style={{ width: speedBar + '%', backgroundColor: 'rgb(85, 166, 156)', marginBottom: '5px' }}>{speed}</div></div>
+                    <div style={statContainer}><div style={{ width: attackBar + '%', backgroundColor: 'rgb(85, 166, 156)', marginBottom: '5px' }}>{attack}</div></div>
+                    <div style={statContainer}><div style={{ width: defenseBar + '%', backgroundColor: 'rgb(85, 166, 156)', marginBottom: '5px' }}>{defense}</div></div>
+                    <div style={statContainer}><div style={{ width: specialAttackBar + '%', backgroundColor: 'rgb(85, 166, 156)', marginBottom: '5px' }}>{specialAttack}</div></div>
+                    <div style={statContainer}><div style={{ width: specialDefenseBar + '%', backgroundColor: 'rgb(85, 166, 156)', marginBottom: '5px' }}>{specialDefense}</div></div>
                 </div>
             </div>
             <div className="pokemon-description">
@@ -65,8 +95,8 @@ const PokemonDetail = ({ match }) => {
                 <h3 className="seperator"> Profile </h3>
                 <h4>Height: {pokemon.height} m</h4>
                 <h4>Weight: {pokemon.weight} kg</h4>
-                <h4>Abilites: {pokemon.abilities} </h4>
-                <h4>Egg Groups: {pokemon.egg_groups}</h4>
+                <h4>Abilites: {pokemon.abilities.join(", ")} </h4>
+                <h4>Egg Groups: {pokemon.egg_groups.join(", ")}</h4>
             </div>
         </div>
     )
