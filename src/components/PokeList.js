@@ -8,7 +8,7 @@ const PokeList = (props) => {
     return (
         <section className="poke-list">
             {props.pokemon.map((pokemon, index) => (
-                <Link key={pokemon.id + index} to={`/${pokemon.id}`}>
+                <Link key={pokemon.id + index} to={`/${pokemon.id}`} style={{ textDecoration: 'none' }}>
                     <PokeCell 
                         key={pokemon.id + index}
                         id={pokemon.id}
