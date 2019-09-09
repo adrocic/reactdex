@@ -10,44 +10,48 @@ import './styles/App.css';
 
 const App = () => {
   
+// useState hooks
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState([false]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [cardsPerPage] = useState(12);
+  const [cardsPerPage] = useState(15);
 
+
+// API call useEffect hook which updates the URL whenever currentPage state is updated
   useEffect(() => {
     const fetchCards = async () => {
       setLoading(true);
-      const res = await axios.get('https://intern-pokedex.myriadapps.com/api/v1/pokemon?');
+      const res = await axios.get(`https://intern-pokedex.myriadapps.com/api/v1/pokemon/?page=${currentPage}`);
       setCards(res.data['data']);
       setLoading(false);
     }
 
     fetchCards();
-  }, [] );
+  }, [currentPage] );
 
-  // get current cards
-  const totalCards = cards.length;
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
 
+// Paginate function which updates currentPage based on which arrow is clicked
   const paginate = (pageNumber) => {
     if (pageNumber < 1) {
       pageNumber = 1;
     }
+    if (pageNumber > 36) {
+      pageNumber = 36;
+    }
     setCurrentPage(pageNumber);
   }
+  
+
   return (
     <Router>
       <div className="App">
         <SearchPokemon />
-        <Pagination cardsPerPage={cardsPerPage} totalCards={totalCards} paginate={paginate} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <Pagination cardsPerPage={cardsPerPage} paginate={paginate} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         <Switch>
           <Route 
             path="/" 
             exact 
-            render={(props) => <PokeList {...props } pokemon = {currentCards} loading={loading} /> }
+            render={(props) => <PokeList {...props } pokemon = {cards} loading={loading} /> }
           />
           <Route 
             path="/:id"
