@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles/PokemonDetail.css'
 import './styles/Types.css'
-import { FaFileExcel } from 'react-icons/fa';
 // const ColorThief = require('color-thief');
 
 

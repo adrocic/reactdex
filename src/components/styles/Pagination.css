@@ -1,6 +1,6 @@
 .nav-forward-back {
     display: flex;
-    margin-top: 10px;
+    margin: 10px;
     justify-content: space-between;
     width: 90%;
 }

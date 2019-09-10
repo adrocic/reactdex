@@ -17,6 +17,7 @@ const App = () => {
   const[search, setSearch] = useState("");
   const[searchQuery, setSearchQuery] = useState("");
   const[showDeleteButton, setShowDeleteButton] = useState(false);
+  const[showPaginationButtons, setShowPaginationButtons] = useState(true);
 
 
 // API call useEffect hook which updates the URL whenever currentPage state is updated
@@ -77,22 +78,28 @@ const App = () => {
             type="text" 
             value={search} 
             onChange={filterSearch}
-            placeholder="Pokemon" />
-
+            placeholder="Pokemon" 
+          />
           {showDeleteButton &&
             <input
             className="delete-strokes"
             type="button"
             value="X"
             onClick={clearSearch}
-            /> }
+            /> 
+          }
         </form>
-        <Pagination paginate={paginate} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        
         <Switch>
           <Route 
             path="/" 
             exact 
-            render={(props) => <PokeList {...props } pokemon = {cards} loading={loading} /> }
+            render={(props) => 
+              <div className="pagination-pokelist-wrapper">
+                <Pagination paginate={paginate} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+                <PokeList {...props } pokemon = {cards} loading={loading} />
+              </div>
+            }
           />
           <Route 
             path="/:id"
