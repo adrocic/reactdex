@@ -11,11 +11,11 @@ const App = () => {
   
 // useState hooks
   const [cards, setCards] = useState([]);
+  const [cardsMeta, setCardsMeta] = useState([]);
   const [loading, setLoading] = useState([false]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [cardsPerPage] = useState(15);
   const[search, setSearch] = useState("");
-  const[searchedCards, setSearchedCards] = useState("");
+  const[searchQuery, setSearchQuery] = useState("");
   const[showDeleteButton, setShowDeleteButton] = useState(false);
 
 
@@ -24,33 +24,23 @@ const App = () => {
   useEffect(() => {
     const fetchCards = async () => {
       setLoading(true);
-      const res = await axios.get(`https://intern-pokedex.myriadapps.com/api/v1/pokemon/?page=${currentPage}`);
+      const res = await axios.get(
+        `https://intern-pokedex.myriadapps.com/api/v1/pokemon/?page=${currentPage}&name=${searchQuery}`
+      );
       setCards(res.data['data']);
+      setCardsMeta(res.data['meta']);
       setLoading(false);
     }
-
-    fetchCards();
-  }, [currentPage] );
-
-// API call useEffect hook which updates the URL whenever searchedCards is updated
-// This one is for the individual cards searched
-  useEffect(() => {
-    const fetchSearchedCards = async () => {
-      const res = await axios.get(`https://intern-pokedex.myriadapps.com/api/v1/pokemon/?name=${searchedCards}`);
-      setCards(res.data['data']);
-    }
-
-    fetchSearchedCards();
-  }, [searchedCards] );
-
+      fetchCards();
+  }, [currentPage, searchQuery] );
 
 // Paginate function which updates currentPage based on which arrow is clicked
   const paginate = (pageNumber) => {
     if (pageNumber < 1) {
       pageNumber = 1;
     }
-    if (pageNumber > 36) {
-      pageNumber = 36;
+    if (pageNumber > cardsMeta.last_page) {
+      pageNumber = cardsMeta.last_page;
     }
     setCurrentPage(pageNumber);
   }
@@ -64,13 +54,14 @@ const App = () => {
 // Updates the state of searchedCards based on the current value of the state: search
   const updateSearch = e => {
     e.preventDefault();
-    setSearchedCards(search);
+    setCurrentPage(1);
+    setSearchQuery(search);
   }
 
 // Updates the state of search and clears it
   const clearSearch = e => {
     setSearch("");
-    setSearchedCards("");
+    setSearchQuery("");
     setCurrentPage(1);
     setShowDeleteButton(false);
   }
@@ -88,17 +79,15 @@ const App = () => {
             onChange={filterSearch}
             placeholder="Pokemon" />
 
-          {showDeleteButton
-          ?  
+          {showDeleteButton &&
             <input
             className="delete-strokes"
             type="button"
             value="X"
             onClick={clearSearch}
-            />
-          : null }
+            /> }
         </form>
-        <Pagination cardsPerPage={cardsPerPage} paginate={paginate} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+        <Pagination paginate={paginate} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
         <Switch>
           <Route 
             path="/" 
