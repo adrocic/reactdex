@@ -16,6 +16,47 @@ body {
   box-shadow: 0px 0px 3px 1px rgba(122,122,122,1);
 }
 
+.search-bar {
+  display: -webkit-flex;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 440px;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 3px;
+  border: none;
+  opacity: 0.6;
+  font-size: 30px;
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.delete-strokes {
+  margin-top: 20px;
+  margin-left: 5px;
+  border-radius: 3px;
+  border: none;
+  opacity: 0.6;
+  height: 50px;
+  width: 50px;
+}
+
+.delete-strokes:hover {
+  box-shadow: 0px 0px 10px 3px rgba(122,122,122,1);
+  transform: translate(0px, -1px);
+  cursor: pointer;
+}
+
+.delete-strokes:active {
+  box-shadow: 0 0px;
+  transform: translate(0px, 3px);
+}
+
 @media only screen and (max-width: 1280px) {
   .App {
     width: 80%;
@@ -28,5 +69,14 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .search-bar {
+    width: 250px;
+  }
+  .delete-strokes {
+    padding: 20px;
   }
 }
