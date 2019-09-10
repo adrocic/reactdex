@@ -29,7 +29,7 @@
     margin-right: 10px;
     border-radius: 5px;
     border: 1px solid rgb(174, 90, 230);
-    padding: 5px 10px 5px 10px;
+    padding: 5px 15px 5px 15px;
   }
 
   .poke-cell-types-fire {
@@ -41,11 +41,11 @@
     font-size: 12px;
     margin-top: 30px;
     width: 30%;
-    background: rgb(255, 242, 238);
-    color: rgb(196, 74, 26);
+    background: rgb(255, 229, 227);
+    color: rgb(196, 46, 26);
     margin-right: 10px;
     border-radius: 5px;
-    border: 1px solid rgb(230, 111, 90);
+    border: 1px solid rgb(230, 106, 90);
     padding: 5px 10px 5px 10px;
   }
 
@@ -58,11 +58,11 @@
     font-size: 12px;
     margin-top: 30px;
     width: 30%;
-    background: rgb(238, 252, 255);
-    color: rgb(26, 176, 196);
+    background: rgb(238, 249, 255);
+    color: rgb(26, 120, 196);
     margin-right: 10px;
     border-radius: 5px;
-    border: 1px solid rgb(90, 155, 230);
+    border: 1px solid rgb(90, 134, 230);
     padding: 5px 15px 5px 15px;
   }
 
@@ -98,4 +98,208 @@
     border-radius: 5px;
     border: 1px solid rgb(119, 119, 119);
     padding: 5px 10px 5px 10px;
+  }
+
+  .poke-cell-types-normal {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(255, 252, 246);
+    color: rgb(212, 197, 154);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(214, 187, 122);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-electric {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(255, 252, 213);
+    color: rgb(230, 198, 57);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(228, 198, 64);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-ground {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(255, 250, 238);
+    color: rgb(224, 171, 56);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(214, 165, 59);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-fairy {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(255, 229, 252);
+    color: rgb(210, 56, 224);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(209, 59, 214);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-fighting {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(252, 237, 234);
+    color: rgb(224, 118, 56);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(214, 108, 59);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-psychic {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(255, 238, 250);
+    color: rgb(224, 56, 174);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(214, 59, 162);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-rock {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(255, 247, 237);
+    color: rgb(141, 98, 35);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(143, 98, 40);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-steel {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(245, 254, 255);
+    color: rgb(159, 173, 173);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(142, 152, 155);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-ice {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(237, 254, 255);
+    color: rgb(58, 187, 219);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(62, 198, 216);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-ghost {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(242, 237, 255);
+    color: rgb(61, 41, 99);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(57, 38, 87);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-dragon {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(248, 237, 255);
+    color: rgb(117, 86, 138);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(130, 97, 145);
+    padding: 5px 15px 5px 15px;
+  }
+
+  .poke-cell-types-dark {
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    align-self: flex-end;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 30px;
+    width: 30%;
+    background: rgb(207, 207, 207);
+    color: rgb(78, 78, 78);
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(63, 63, 63);
+    padding: 5px 15px 5px 15px;
   }
