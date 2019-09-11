@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Pagination from './Pagination';
 import PokeList from './PokeList';
 import PokemonDetail from './PokemonDetail';
+import BackButtonDetailView from './BackButtonDetailView';
 import axios from 'axios';
 import './styles/App.css';
 
@@ -17,7 +18,6 @@ const App = () => {
   const[search, setSearch] = useState("");
   const[searchQuery, setSearchQuery] = useState("");
   const[showDeleteButton, setShowDeleteButton] = useState(false);
-  const[showPaginationButtons, setShowPaginationButtons] = useState(true);
 
 
 // API call useEffect hook which updates the URL whenever currentPage state is updated
@@ -95,15 +95,21 @@ const App = () => {
             path="/" 
             exact 
             render={(props) => 
-              <div className="pagination-pokelist-wrapper">
-                <Pagination paginate={paginate} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+              <React.Fragment>
+                <Pagination paginate={paginate} currentPage={currentPage} />
                 <PokeList {...props } pokemon = {cards} loading={loading} />
-              </div>
+              </React.Fragment>
             }
           />
           <Route 
             path="/:id"
             component={PokemonDetail}
+            render={(props) => 
+              <React.Fragment>
+                <PokemonDetail />
+                <BackButtonDetailView paginate={paginate} />
+              </React.Fragment>
+            }
           />
         </Switch>
       </div>
