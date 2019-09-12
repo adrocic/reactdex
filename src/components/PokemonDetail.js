@@ -18,6 +18,7 @@ const PokemonDetail = ({ match }) => {
     useEffect(() => {
         fetchPokemon();
     }, []);
+    
 
     const fetchPokemon = async () => {
         const res = await axios.get(`https://intern-pokedex.myriadapps.com/api/v1/pokemon/${match.params.id}`);
@@ -94,7 +95,7 @@ const PokemonDetail = ({ match }) => {
                 <h3 className="seperator"> Profile </h3>
                 <h4>Height: {pokemon.height} m</h4>
                 <h4>Weight: {pokemon.weight} kg</h4>
-                <h4>Abilites: {pokemon.abilities.join(", ")} </h4>
+                <h4>Abilities: {pokemon.abilities.join(", ")} </h4>
                 <h4>Egg Groups: {pokemon.egg_groups.join(", ")}</h4>
             </div>
         </div>

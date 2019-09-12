@@ -106,8 +106,8 @@ const App = () => {
             component={PokemonDetail}
             render={(props) => 
               <React.Fragment>
-                <PokemonDetail />
                 <BackButtonDetailView paginate={paginate} />
+                <PokemonDetail />
               </React.Fragment>
             }
           />
